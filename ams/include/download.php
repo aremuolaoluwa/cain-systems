@@ -10,10 +10,9 @@ if (isset($_GET['start_date']) && isset($_GET['end_date'])) {
         die("Invalid date format.");
     }
 
-    $sql = "SELECT s.name, s.reg_number, s.class, a.status, a.date
-            FROM attendance a
-            JOIN student_profile s ON a.student_id = s.id
-            WHERE a.date BETWEEN ? AND ?";
+    $sql = "SELECT name, reg_number, class, status, date
+            FROM mark_attendance
+            WHERE date BETWEEN ? AND ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ss', $start_date, $end_date);
     $stmt->execute();
