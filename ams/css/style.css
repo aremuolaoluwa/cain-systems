@@ -1,0 +1,283 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+
+/* Index page */
+
+
+.containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+}
+
+.div1, .div2, .div3, .div4 {
+    flex: 1 1 300px; /* Flex properties to control width */
+    margin: 10px;
+    background-color: #008000;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: hidden;
+}
+
+.wrappers {
+    padding: 35px;
+}
+
+.wrappers h1 {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.wrappers p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.wrappers button {
+    background-color: #ffffff;
+    color: #008000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.wrappers button:hover {
+    background-color: #c9c9c9f7;
+}
+
+.wrappers a {
+    text-decoration: none;
+    color: #008000;
+}
+
+.wrappers a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Registration Page */
+
+
+.form-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-items {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+.form-title {
+    color: #058239;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.item {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.item label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.item input,
+.item select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container input[type="submit"] {
+    background-color: #2ecc71;
+    width: 100%;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.button-container input[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+.footer-nav-bar {
+    margin-top: 20px;
+}
+
+.footer-nav-bar a {
+    text-decoration: none;
+    color: #555;
+    margin-right: 10px;
+}
+
+.footer-nav-bar a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Mark Attendance  */
+
+
+h2 {
+    color: #09813b;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/*table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}*/
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container input[type="submit"] {
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.button-container input[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+
+
+/* Enrolled Students */
+
+
+.table-wrap {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h2 {
+    color: #09813b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table td {
+    background-color: #ffffff;
+}
+
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+/* Download Attendance */
+
+
+#attendance_date {
+        margin-bottom: 10px;
+        color: #555;
+}
+
+#att-date {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+
+    /* Footer */
+
+
+.footer-nav-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:#f9f9f9;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}

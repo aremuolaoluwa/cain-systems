@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrap {
+    flex: 1; /* Take up remaining space */
+}
+
+.form-items {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px; /* Negative margin to counteract item padding */
+}
+
+.item {
+    flex: 1 1 calc(33.33% - 20px); /* Adjust for padding */
+    margin: 10px; /* Adjust spacing between items */
+}
+
+.item label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.item input,
+.item select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+fieldset {
+    border: none; /* Remove border */
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+legend {
+    font-weight: bold;
+}
+
+/* Footer */
+
+.footer-nav-bar {
+    margin-top: 20px;
+}
+
+.footer-nav-bar a {
+    text-decoration: none;
+    color: #555;
+    margin-right: 10px;
+}
+
+.footer-nav-bar a:hover {
+    text-decoration: underline;
+}
+
+ .footer-nav-bar { 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:#f9f9f9;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
