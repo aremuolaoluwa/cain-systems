@@ -25,7 +25,7 @@
                     include('./include/db.php');
 
                         // fetch student records from the database
-                        $sql = "SELECT id, CONCAT(first_name, ' ', other_name, ' ', last_name) AS name, reg_number, class FROM student_profile";
+                        $sql = "SELECT id, CONCAT_WS(' ', first_name, COALESCE(other_name, ''), last_name) AS name, reg_number, class FROM student_profile";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
