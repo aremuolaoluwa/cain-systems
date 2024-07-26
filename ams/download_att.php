@@ -10,7 +10,7 @@
     <div class="form-wrap">
         <div class="form-items">
             <h2>Download Attendance</h2>
-            <form action="../include/download.php" method="GET">
+            <form action="./include/download.php" method="GET">
                 <label for="start_date">Start Date</label>
                 <input type="date" id="start_date" name="start_date" required>
                 <label for="end_date">End Date</label>

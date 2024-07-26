@@ -5,7 +5,7 @@ if (isset($_GET['start_date']) && isset($_GET['end_date'])) {
     $start_date = $_GET['start_date'];
     $end_date = $_GET['end_date'];
 
-    // security check for validate dates
+    // security check to validate dates
     if (strtotime($start_date) === false || strtotime($end_date) === false) {
         die("Invalid date format.");
     }
@@ -19,7 +19,7 @@ if (isset($_GET['start_date']) && isset($_GET['end_date'])) {
     $result = $stmt->get_result();
 
     // create CSV file
-    $filename = "attendance_from_$start_date_to_$end_date.csv";
+    $filename = "attendance.csv";
     header('Content-Type: text/csv');
     header('Content-Disposition: attachment; filename="' . $filename . '"');
 
