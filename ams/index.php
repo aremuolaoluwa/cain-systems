@@ -13,7 +13,7 @@
                 <h1>REGISTRATION</h1>
                 <p>Click here to register students</p>
                 <p>
-                    <a href="test.php">  
+                    <a href="registration.php">  
                         <button>Click here</button>
                     </a>
                 </p>
@@ -32,7 +32,7 @@
         </div>
         <div class="div3">
             <div class="wrappers">
-                <h1>STUDENTS</h1>
+                <h1>REGISTERED STUDENTS</h1>
                 <p>Access registered students' profile here</p>
                 <p>
                     <a href="registered_std.php">  
@@ -42,6 +42,17 @@
             </div>
         </div>
         <div class="div4">
+            <div class="wrappers">
+                <h1>ENROLLED STUDENTS</h1>
+                <p>Access registered students' profile here</p>
+                <p>
+                    <a href="enrolled_students.php">  
+                        <button>Click here</button>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="div5">
             <div class="wrappers">
                 <h1>DOWNLOAD ATTENDANCE</h1>
                 <p>Click here to download attendance</p>
