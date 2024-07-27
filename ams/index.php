@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CAIN | Attendance Management System</title>
     <link rel="stylesheet" href="./css/styled.css">
 </head>
 <body>
+    <ul class="title">
+        <li class="heading-title">Catering to Africans In Need</li>
+        <li class="heading-subtitle">Attendance Management System</li>
+    </ul>
     <div class="container">
         <div class="registration-container">
             <div class="wrapper">
@@ -14,7 +18,7 @@
                 <p id="container-heading-text">Click here to register students</p>
                 <p>
                     <a href="registration.php">  
-                        <button>Click here</button>
+                        <button class="btn-click">Click here</button>
                     </a>
                 </p>
             </div>
@@ -25,7 +29,7 @@
                 <p id="container-heading-text">Click here to take students attendance</p>
                 <p>
                     <a href="mark_attendance.php">  
-                        <button>Click here</button>
+                        <button class="btn-click">Click here</button>
                     </a>
                 </p>
             </div>
@@ -36,7 +40,7 @@
                 <p id="container-heading-text">Access registered students' profile here</p>
                 <p>
                     <a href="registered_std.php">  
-                        <button>Click here</button>
+                        <button class="btn-click">Click here</button>
                     </a>
                 </p>
             </div>
@@ -47,7 +51,7 @@
                 <p id="container-heading-text">Access registered students' profile here</p>
                 <p>
                     <a href="enrolled_students.php">  
-                        <button>Click here</button>
+                        <button class="btn-click">Click here</button>
                     </a>
                 </p>
             </div>
@@ -58,7 +62,7 @@
                 <p id="container-heading-text">Click here to download attendance</p>
                 <p>
                     <a href="download_att.php">  
-                        <button>Click here</button>
+                        <button class="btn-click">Click here</button>
                     </a>
                 </p>
             </div>

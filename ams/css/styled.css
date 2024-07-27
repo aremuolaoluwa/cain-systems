@@ -1,4 +1,4 @@
-body {
+* {
     margin: 0;
     padding: 0;
     /* justify-content: center; */
@@ -7,16 +7,42 @@ body {
     box-sizing: border-box;
 }
 
+ul, .title {
+    list-style-type: none;
+    line-height: 0;
+}
+
+.heading-title {
+    width: 80%;
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-bottom: 0px;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(228, 4, 4);
+}
+
+.heading-subtitle {
+    width: 60%;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+    color: rgb(160, 3, 3);
+}
+
 .container {
     width: 100%;
-    margin: 20px auto;
+    margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 20px;
-    max-width: 800px;
+    gap: 10px;
+    max-width: 90%;
 }
 
 .registration-container, 
@@ -24,9 +50,11 @@ body {
 .registered-students-container, 
 .enrolled-students-container,
 .download-attendance-container {
-    /* flex: 1 300px; */
-    width: 300px;
-    height: 180px;
+    display: flex;
+    width: 280px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
     /* overflow: auto; */
     padding: 20px;
     border: 1px solid #ccc;
@@ -34,24 +62,22 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container-heading {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
 .wrapper {
-    background-color: #098809;
+    /* background-color: #eaeeea; */
+    width: 100%;
 }
 
-.div2 {
-    background-color: brown;
+.container-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 #container-heading-text {
     margin: 10px 0;
 }
 
-button {
+.btn-click {
+    width: 150px;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -61,6 +87,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+
+.btn-click:hover {
     background-color: #29e100;
 }
