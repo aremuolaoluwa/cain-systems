@@ -7,10 +7,9 @@ body {
     box-sizing: border-box;
 }
 
-.containers {
-    width: 50%;
+.container {
+    width: 100%;
     margin: 20px auto;
-    border: 3px solid red;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -20,11 +19,11 @@ body {
     max-width: 800px;
 }
 
-.registration-wrap, 
-.take-attendance-wrap, 
-.registered-students-wrap, 
-.enrolled-students-wrap,
-.download-attendance-wrap {
+.registration-container, 
+.take-attendance-container, 
+.registered-students-container, 
+.enrolled-students-container,
+.download-attendance-container {
     /* flex: 1 300px; */
     width: 300px;
     height: 180px;
@@ -40,7 +39,15 @@ body {
     margin-bottom: 10px;
 }
 
-p {
+.wrapper {
+    background-color: #098809;
+}
+
+.div2 {
+    background-color: brown;
+}
+
+#container-heading-text {
     margin: 10px 0;
 }
 
