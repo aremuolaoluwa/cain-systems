@@ -1,0 +1,9 @@
+{
+    "name": "clockin/app",
+    "description": "To track the entry and exit of staff and students at CAIN",
+    "require": {
+      "php": ">=7.4",
+      "vlucas/phpdotenv": "^5.6",
+        "phpmailer/phpmailer": "^6.9"
+    }
+  }

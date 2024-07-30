@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $stmt = $conn->prepare("SELECT email FROM users WHERE reset_token = ?");
+    $stmt = $conn->prepare("SELECT email FROM registrations WHERE reset_token = ?");
     $stmt->bind_param("s", $token);
     $stmt->execute();
     $stmt->store_result();
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
         $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
-        $stmt = $conn->prepare("UPDATE users SET password = ?, reset_token = NULL WHERE email = ?");
+        $stmt = $conn->prepare("UPDATE registrations SET password = ?, reset_token = NULL WHERE email = ?");
         $stmt->bind_param("ss", $hashedPassword, $email);
         $stmt->execute();
 
