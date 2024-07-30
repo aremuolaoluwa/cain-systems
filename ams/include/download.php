@@ -1,11 +1,11 @@
 <?php
-include '../include/db.php';
+
+include 'db.php';
 
 if (isset($_GET['start_date']) && isset($_GET['end_date'])) {
     $start_date = $_GET['start_date'];
     $end_date = $_GET['end_date'];
 
-    // security check to validate dates
     if (strtotime($start_date) === false || strtotime($end_date) === false) {
         die("Invalid date format.");
     }
@@ -18,7 +18,6 @@ if (isset($_GET['start_date']) && isset($_GET['end_date'])) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // create CSV file
     $filename = "attendance.csv";
     header('Content-Type: text/csv');
     header('Content-Disposition: attachment; filename="' . $filename . '"');

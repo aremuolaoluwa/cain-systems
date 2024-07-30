@@ -4,7 +4,6 @@ include('db.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // inputs validation
     $first_name = filter_var($_POST['first_name'], FILTER_SANITIZE_STRING);
     $other_name = filter_var($_POST['other_name'], FILTER_SANITIZE_STRING);
     $last_name = filter_var($_POST['last_name'], FILTER_SANITIZE_STRING);
@@ -23,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "INSERT INTO student_profile (first_name, other_name, last_name, reg_number, class, dob, name_of_school, state_of_origin, year_admitted, gender, religion, guardian_name, guardian_phone, occupation, guardian_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
-    // to prevent SQL injection
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
