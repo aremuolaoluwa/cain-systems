@@ -1,11 +1,11 @@
 <?php
 
-include "db.php";
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
+
+require 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailOrUsername = $_POST['email_username'];
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ss", $resetToken, $email);
         $stmt->execute();
 
-        $resetLink = "http://localhost/cms/include/new_password.php?token=$resetToken";
+        $resetLink = "http://localhost/cms/include/forgot_password.php?token=$resetToken";
         $subject = "Password Reset Request";
         $message = "Click the following link to reset your password: <a href='$resetLink'>$resetLink</a>";
 
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
-            $mail->setFrom('tech@cainafrica.org', 'CAIN Africa');
+            $mail->setFrom('tech@cainafrica.org', 'CAIN Africa Tech Support');
             $mail->addAddress($email);
 
             $mail->isHTML(true);

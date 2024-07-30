@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <h2>Forgot Password</h2>
-        <form action="forgot_password.php" method="POST">
+        <form action="./include/forgot_password.php" method="POST">
             <label for="email_username">Email or Username:</label>
             <input type="text" id="email_username" name="email_username" placeholder="Enter Your Email or Username" required>
             <button type="submit">Submit</button>
