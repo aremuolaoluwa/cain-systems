@@ -10,7 +10,7 @@
     <div class="form-wrap">
         <div class="form-items">
             <h2 class="form-title">User Registration</h2>
-            <form action="./include/reg.php" method="post">
+            <form action="./include/registration.php" method="post">
                 <div class="form-row">
                     <div class="item">
                         <label for="firstname">First Name</label>
@@ -33,6 +33,16 @@
                 </div>
                 <div class="form-row">
                     <div class="item">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="item">
+                        <label for="phone">Phone</label>
+                        <input type="number" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="item">
                         <label for="role">Role</label>
                         <select id="role" name="role" required>
                             <option value="Student">Student</option>
@@ -50,6 +60,7 @@
                 <div class="button-container">
                     <input type="submit" value="Register">
                 </div>
+                <p><a href="index.php">Already have an account?</a></p>
             </form>
         </div>
     </div>

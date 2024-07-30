@@ -7,15 +7,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = htmlspecialchars($_POST["lastname"]);
     $role = htmlspecialchars($_POST["role"]);
     $gender = htmlspecialchars($_POST["gender"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $phone = htmlspecialchars($_POST["phone"]);
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
 
-    if (empty($firstname) || empty($lastname) || empty($role) || empty($gender) || empty($username) || empty($password)) {
-        echo "Error: All fields are required.";
+    if (empty($firstname) || empty($lastname) || empty($role) || empty($gender) || empty($email) || empty($phone) || empty($username) || empty($password)) {
+        echo "<script>alert('All fields are required.'); window.location.href='../registration.php';</script>";
     } else {
         
-        $role = ucfirst(strtolower($role));
-        $gender = ucfirst(strtolower($gender));
+        //$role = ucfirst(strtolower($role));
+        //$gender = ucfirst(strtolower($gender));
 
         $check_username_query = "SELECT * FROM registrations WHERE username=?";
         $stmt = $conn->prepare($check_username_query);
@@ -28,10 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            $insert_query = "INSERT INTO registrations (firstname, lastname, role, gender, username, password)
-                             VALUES (?, ?, ?, ?, ?, ?)";
+            $insert_query = "INSERT INTO registrations (firstname, lastname, role, gender, email, phone, username, password)
+                             VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($insert_query);
-            $stmt->bind_param("ssssss", $firstname, $lastname, $role, $gender, $username, $hashed_password);
+            $stmt->bind_param("ssssssss", $firstname, $lastname, $role, $gender, $email, $phone, $username, $hashed_password);
 
             if ($stmt->execute()) {
                 echo "<script>alert('Registration successful! Please sign in to proceed to your dashboard'); window.location.href='../index.php';</script>";

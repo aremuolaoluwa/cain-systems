@@ -20,7 +20,7 @@
                     <input type="password" id="password" name="password" required>
                 </p>
                 <p><button type="submit" name="submit">Login</button></p>
-                <p>Not registered? Click <a href="registration.php">here</a></p>
+                <p><a href="registration.php">Not registered? | </a><span><a href="forgot_password.php">Forgot Password?</a></span></p>
             </div>
         </form>
     </div>
