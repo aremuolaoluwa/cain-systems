@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2024 at 11:44 AM
+-- Generation Time: Aug 09, 2024 at 11:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -48,43 +48,78 @@ CREATE TABLE `mark_attendance` (
   `reg_number` varchar(255) DEFAULT NULL,
   `class` varchar(50) DEFAULT NULL,
   `status` enum('Present','Absent') DEFAULT NULL,
-  `date` date DEFAULT curdate()
+  `date` date DEFAULT curdate(),
+  `program_name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mark_attendance`
 --
 
-INSERT INTO `mark_attendance` (`id`, `name`, `reg_number`, `class`, `status`, `date`) VALUES
-(1, 'Joseph Aremu', 'CAIN/JSS2/0267', 'JSS2', 'Absent', '2024-05-27'),
-(2, 'Joseph Aremu', 'CAIN/JSS2/0267', 'JSS2', 'Absent', '2024-05-27'),
-(3, 'Oluwakemi Olurinola', 'CAIN/SS1/0221', 'SS1', 'Absent', '2024-05-27'),
-(4, 'Joseph Aremu', 'CAIN/JSS2/0267', 'JSS2', 'Present', '2024-05-27'),
-(5, 'Oluwakemi Olurinola', 'CAIN/SS1/0221', 'SS1', 'Present', '2024-05-27'),
-(6, 'Joseph Aremu', 'CAIN/JSS2/0267', 'JSS2', 'Present', '2024-05-28'),
-(7, 'Oluwakemi Olurinola', 'CAIN/SS1/0221', 'SS1', 'Present', '2024-05-28');
+INSERT INTO `mark_attendance` (`id`, `name`, `reg_number`, `class`, `status`, `date`, `program_name`) VALUES
+(1, 'Joseph Olaoluwa Aremu', 'cain/2024/12220', 'JSS1', 'Present', '2024-08-06', NULL),
+(2, 'Joseph Olaoluwa Aremu', 'cain/2024/00225', 'JSS1', 'Present', '2024-08-06', NULL),
+(3, 'Bello Olatomiwa James', 'CAIN/2024/052', 'SS2', 'Present', '2024-08-06', NULL),
+(4, 'Joseph Olaoluwa Aremu', 'cain/2024/12220', 'JSS1', 'Present', '2024-08-06', 'Daily Tutorial'),
+(5, 'Joseph Olaoluwa Aremu', 'cain/2024/00225', 'JSS1', 'Present', '2024-08-06', 'Daily Tutorial'),
+(6, 'Bello Olatomiwa James', 'CAIN/2024/052', 'SS2', 'Present', '2024-08-06', 'Daily Tutorial');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students`
+-- Table structure for table `programs`
 --
 
-CREATE TABLE `students` (
+CREATE TABLE `programs` (
   `id` int(11) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `reg_number` varchar(255) NOT NULL,
-  `class` enum('JSS1','JSS2','JSS3','SS1','SS2','SS3') NOT NULL
+  `program` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `students`
+-- Dumping data for table `programs`
 --
 
-INSERT INTO `students` (`id`, `first_name`, `last_name`, `reg_number`, `class`) VALUES
-(1, 'Joseph', 'Aremu', 'CAIN/JSS2/0267', 'JSS2'),
-(2, 'Oluwakemi', 'Olurinola', 'CAIN/SS1/0221', 'SS1');
+INSERT INTO `programs` (`id`, `program`) VALUES
+(2, 'Career Enrichment'),
+(1, 'Daily Tutorial'),
+(3, 'ICT4U'),
+(5, 'Life Hacks'),
+(4, 'Mentorship Class');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_profile`
+--
+
+CREATE TABLE `student_profile` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `other_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `reg_number` varchar(50) NOT NULL,
+  `class` enum('JSS1','JSS2','JSS3','SS1','SS2','SS3') NOT NULL,
+  `dob` date NOT NULL,
+  `name_of_school` varchar(255) NOT NULL,
+  `state_of_origin` varchar(100) NOT NULL,
+  `year_admitted` varchar(10) NOT NULL,
+  `gender` enum('male','female') NOT NULL,
+  `religion` enum('christianity','islam') NOT NULL,
+  `guardian_name` varchar(100) NOT NULL,
+  `guardian_phone` varchar(20) NOT NULL,
+  `occupation` varchar(120) NOT NULL,
+  `guardian_address` varchar(255) NOT NULL,
+  `enrollment_status` enum('enrolled','unenrolled') DEFAULT 'unenrolled'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student_profile`
+--
+
+INSERT INTO `student_profile` (`id`, `first_name`, `other_name`, `last_name`, `reg_number`, `class`, `dob`, `name_of_school`, `state_of_origin`, `year_admitted`, `gender`, `religion`, `guardian_name`, `guardian_phone`, `occupation`, `guardian_address`, `enrollment_status`) VALUES
+(2, 'Joseph', 'Olaoluwa', 'Aremu', 'cain/2024/12220', 'JSS1', '2024-07-23', 'School here', 'Lagos', '2024', 'male', 'christianity', 'Guardian Name Here', '234255566322', 'Tech Expert', '4, Guardian Adress Here', 'enrolled'),
+(3, 'Joseph', 'Olaoluwa', 'Aremu', 'cain/2024/00225', 'JSS1', '2024-07-30', 'School here', 'Lagos', '2024', 'male', 'christianity', 'Guardian Name Here', '234255566322', 'Tech Expert', '4, Guardian Adress Here', 'unenrolled'),
+(4, 'Bello', 'Olatomiwa', 'James', 'CAIN/2024/052', 'SS2', '2005-06-24', 'Glory Shines College, Lagos', 'Kogi State', '2024', 'male', 'islam', 'Mr James Adewunmi', '08025468955', 'Accountant', '3, George Madsison, Street, Ikotun, Lagos', 'unenrolled');
 
 --
 -- Indexes for dumped tables
@@ -101,14 +136,21 @@ ALTER TABLE `attendance`
 -- Indexes for table `mark_attendance`
 --
 ALTER TABLE `mark_attendance`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_program_name` (`program_name`);
 
 --
--- Indexes for table `students`
+-- Indexes for table `programs`
 --
-ALTER TABLE `students`
+ALTER TABLE `programs`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `reg_number` (`reg_number`);
+  ADD UNIQUE KEY `program` (`program`);
+
+--
+-- Indexes for table `student_profile`
+--
+ALTER TABLE `student_profile`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -124,13 +166,19 @@ ALTER TABLE `attendance`
 -- AUTO_INCREMENT for table `mark_attendance`
 --
 ALTER TABLE `mark_attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `students`
+-- AUTO_INCREMENT for table `programs`
 --
-ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `programs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `student_profile`
+--
+ALTER TABLE `student_profile`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -141,6 +189,12 @@ ALTER TABLE `students`
 --
 ALTER TABLE `attendance`
   ADD CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`reg_number`) REFERENCES `students` (`reg_number`);
+
+--
+-- Constraints for table `mark_attendance`
+--
+ALTER TABLE `mark_attendance`
+  ADD CONSTRAINT `fk_program_name` FOREIGN KEY (`program_name`) REFERENCES `programs` (`program`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

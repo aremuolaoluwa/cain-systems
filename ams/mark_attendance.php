@@ -9,50 +9,70 @@
 <body>
     <form action="./include/mark_att.php" method="post">
         <h2>Take Attendance</h2>
-            <table>
-                <thead>
+        <table>
+            <thead>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Student ID</th>
                     <th>Class</th>
                     <th>Status</th>
+                    <th>Program</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 <?php
                 
-                    include('./include/db.php');
+                include('./include/db.php');
 
-                        $sql = "SELECT id, CONCAT_WS(' ', first_name, COALESCE(other_name, ''), last_name) AS name, reg_number, class FROM student_profile";
-                        $result = $conn->query($sql);
+                // Fetch programs
+                $programQuery = "SELECT id, program FROM programs";
+                $programResult = $conn->query($programQuery);
+                $programOptions = "";
+                
+                if ($programResult->num_rows > 0) {
+                    while ($program = $programResult->fetch_assoc()) {
+                        $programOptions .= "<option value='{$program['id']}'>{$program['program']}</option>";
+                    }
+                } else {
+                    $programOptions = "<option value=''>No programs found</option>";
+                }
 
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . $row["id"] . "</td>";
-                                echo "<td>" . $row["name"] . "</td>";
-                                echo "<td>" . $row["reg_number"] . "</td>";
-                                echo "<td>" . $row["class"] . "</td>";
-                                echo "<td>";
-                                echo "<select name='status[" . $row["id"] . "]'>";
-                                echo "<option value='Present'>Present</option>";
-                                echo "<option value='Absent'>Absent</option>";
-                                echo "</select>";
-                                echo "</td>";
-                                echo "</tr>";
-                            }
-                        } else {
-                            echo "<tr><td colspan='5'>No students found</td></tr>";
-                        }
+                // Fetch students
+                $sql = "SELECT id, CONCAT_WS(' ', first_name, COALESCE(other_name, ''), last_name) AS name, reg_number, class FROM student_profile";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["id"] . "</td>";
+                        echo "<td>" . $row["name"] . "</td>";
+                        echo "<td>" . $row["reg_number"] . "</td>";
+                        echo "<td>" . $row["class"] . "</td>";
+                        echo "<td>";
+                        echo "<select name='status[" . $row["id"] . "]'>";
+                        echo "<option value='Present'>Present</option>";
+                        echo "<option value='Absent'>Absent</option>";
+                        echo "</select>";
+                        echo "</td>";
+                        echo "<td>";
+                        echo "<select name='program[" . $row["id"] . "]'>";
+                        echo $programOptions;
+                        echo "</select>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>No students found</td></tr>";
+                }
                 ?>
-                </tbody>
-            </table>
-            <div class="button-container">
-                <input type="submit" value="Take Attendance">
-            </div>
-     </form>
-     <footer class="footer-nav-bar">
+            </tbody>
+        </table>
+        <div class="button-container">
+            <input type="submit" value="Take Attendance">
+        </div>
+    </form>
+    <footer class="footer-nav-bar">
         <a href="index.php">Home |</a>
         <a href="registered_std.php">Registered Students |</a>
         <a href="mark_attendance.php">Mark Attendance |</a>

@@ -6,7 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
 
-    // Check if username and password match
     $login_query = "SELECT * FROM registrations WHERE username=?";
     $stmt = $conn->prepare($login_query);
     $stmt->bind_param("s", $username);
@@ -24,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>alert('Error: Invalid password.'); window.location.href='../index.php';</script>";
         }
     } else {
-        echo "<script>alert('Error: Invalid username.');</script>";
+        echo "<script>alert('Error: Invalid username.'); window.location.href='../index.php';</script>";
     }
 
     $stmt->close();
