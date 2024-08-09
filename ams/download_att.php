@@ -14,7 +14,16 @@
                 <label for="start_date">Start Date</label>
                 <input type="date" id="start_date" name="start_date" required>
                 <label for="end_date">End Date</label>
-                <input type="date" id="end_date" name="end_date" required>         
+                <input type="date" id="end_date" name="end_date" required>
+                <label for="program_type">Program Type</label>
+                <select id="program_name" name="program_name" required>
+                    <option value="" disabled selected>Select Program Type</option>
+                    <option value="Daily Tutorial">Daily Tutorial</option>
+                    <option value="Life Hacks">Life Hacks</option>
+                    <option value="Mentorship">Mentorship</option>
+                    <option value="ICT4U">ICT4U</option>
+                    <option value="Career Enrichment">Career Enrichment</option>
+                </select>
                 <div class="button-container">
                     <input type="submit" value="Download">
                 </div>
