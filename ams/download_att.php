@@ -11,31 +11,25 @@
         <div class="form-items">
             <h2>Download Attendance</h2>
             <form action="./include/download.php" method="GET">
-                <label for="start_date">Start Date</label>
-                <input type="date" id="start_date" name="start_date" required>
-                <label for="end_date">End Date</label>
-                <input type="date" id="end_date" name="end_date" required>
-                <label for="program_type">Program Type</label>
+                <p><label for="start_date">Start Date</label>
+                <input type="date" id="start_date" name="start_date" required></p>
+                <p><label for="end_date">End Date</label>
+                <input type="date" id="end_date" name="end_date" required></p>
+                <p><label for="program_type">Program Type</label>
                 <select id="program_name" name="program_name" required>
-                    <option value="" disabled selected>Select Program Type</option>
+                    <option value="" disabled selected>Select Program</option>
                     <option value="Daily Tutorial">Daily Tutorial</option>
                     <option value="Life Hacks">Life Hacks</option>
                     <option value="Mentorship">Mentorship</option>
                     <option value="ICT4U">ICT4U</option>
                     <option value="Career Enrichment">Career Enrichment</option>
-                </select>
+                </select></p>
                 <div class="button-container">
                     <input type="submit" value="Download">
                 </div>
             </form>
         </div>
     </div>
-    <footer class="footer-nav-bar">
-        <a href="index.php">Home</a> |
-        <a href="registered_std.php">Registered Students</a> |
-        <a href="enrolled_students.php">Enrolled Students</a> |
-        <a href="mark_attendance.php">Mark Attendance</a> |
-        <a href="download_att.php">Download Attendance</a>
-    </footer>
+    <?php include "footer.php"; ?>
 </body>
 </html>

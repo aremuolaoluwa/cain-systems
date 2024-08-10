@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./main/main.css">
 </head>
 <body>
+    <div class="logo-title">
+        <img src="./img/cain.png" alt="CAIN Logo" width="200" height="180">
+    </div>
     <div class="container">
         <div class="card">
             <div class="wrapper">

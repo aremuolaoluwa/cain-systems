@@ -91,3 +91,22 @@ ul, .title {
 .btn-click:hover {
     background-color: #29e100;
 }
+
+.footer-nav-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:#f9f9f9;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+.footer-nav-bar a {
+    text-decoration: none;
+    color: #555;
+    word-spacing: .1rem;
+    margin-right: 5px;
+}
+.footer-nav-bar a:hover {
+    color: darkgreen;
+}

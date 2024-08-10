@@ -10,7 +10,7 @@ $result = $conn->query("SELECT * FROM student_profile");
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registered Students</title>
-<link rel="stylesheet" type="text/css" href="./css/styles.css">
+<link rel="stylesheet" type="text/css" href="./css/styling.css">
 <style>
        body {
         margin: 0;
@@ -51,24 +51,6 @@ $result = $conn->query("SELECT * FROM student_profile");
         }
         button:hover {
             background-color: #45a049;
-        }
-        .footer-nav-bar {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color:#f9f9f9;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .footer-nav-bar a {
-            text-decoration: none;
-            color: #555;
-            word-spacing: .1rem;
-            margin-right: 5px;
-        }
-        .footer-nav-bar a:hover {
-            color: darkgreen;
         }
 </style>
 </head>
@@ -127,12 +109,6 @@ $result = $conn->query("SELECT * FROM student_profile");
             <?php endwhile; ?>
         </table>
     </div>
-    <footer class="footer-nav-bar">
-        <a href="index.php">Home | </a>
-        <a href="registered_std.php">Registered Students | </a>
-        <a href="enrolled_students.php">Enrolled Students | </a>
-        <a href="mark_attendance.php">Mark Attendance | </a>
-        <a href="download_att.php">Download Attendance</a>
-    </footer>
+    <?php include "footer.php"; ?>
 </body>
 </html>

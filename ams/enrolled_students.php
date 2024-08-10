@@ -3,41 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styling.css">
     <title>Enrolled Students</title>
-    <style>
-        .table-wrap {
-            overflow: auto;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        .enroll-btn {
-            padding: 5px 10px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-        }
-        .enroll-btn:hover {
-            background-color: #45a049;
-        }
-    </style>
 </head>
 <body>
 
 <div class="table-wrap">
     <h2>Enrolled Students</h2>
-    <table>
+    <table class="enroll-tbl">
         <thead>
             <tr>
                 <th>ID</th>
@@ -103,5 +76,6 @@
         </tbody>
     </table>
 </div>
+<?php include "footer.php"; ?>
 </body>
 </html>

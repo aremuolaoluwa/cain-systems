@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/test.css">
+    <link rel="stylesheet" href="./css/styling.css">
     <title>Students Registration</title>
 </head>
 <body>
-    <div class="container">
-        <h2 class="form-title" style="text-align: center; text-transform:uppercase;">Students Registration</h2>
+    <div class="container reg-form-container">
+        <h2 class="form-title">Student Registration</h2>
         <div class="form-container">
             <form action="./include/reg.php" method="post">
                 <fieldset>
@@ -114,11 +114,6 @@
             </form>
         </div>
     </div>
-    <footer class="footer-nav-bar">
-        <a href="index.php">Home |</a>
-        <a href="registered_std.php">Registered Students |</a>
-        <a href="mark_attendance.php">Mark Attendance |</a>
-        <a href="download_att.php">Download Attendance</a>
-    </footer>
+    <?php include "footer.php"; ?>
 </body>
 </html>
