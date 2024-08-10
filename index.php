@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="logo-title">
-        <img src="./img/cain.png" alt="CAIN Logo" width="200" height="180">
+        <img src="./img/cain.png" alt="CAIN Logo">
     </div>
     <div class="container">
         <div class="card">

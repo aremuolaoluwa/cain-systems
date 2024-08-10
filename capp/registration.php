@@ -57,7 +57,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="button-container">
+                <div class="reg-btn">
                     <input type="submit" value="Register">
                 </div>
                 <p><a href="index.php">Already have an account?</a></p>

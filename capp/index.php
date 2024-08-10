@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>User Login</h2>
+        <h3>User Login</h3>
         <form action="./include/login.php" method="post">
             <div class="form-box-wrapper">
                 <p>
@@ -19,8 +19,8 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                 </p>
-                <p><button type="submit" name="submit">Login</button></p>
-                <p><a href="registration.php">Not registered? | </a><span><a href="forgot_password.php">Forgot Password?</a></span></p>
+                <p><button class="log-btn" type="submit" name="submit">Login</button></p>
+                <p><a class="form-links" href="registration.php">Not registered? | </a><span><a class="form-links" href="forgot_password.php">Forgot Password?</a></span></p>
             </div>
         </form>
     </div>

@@ -51,7 +51,7 @@ $conn->close();
 </head>
 <body>
     <div class="dashboard-container">
-        <h2>Welcome, <?php echo $user['firstname']."!"; ?></h2>
+        <h2>Welcome, <?php echo $user['firstname']; ?></h2>
         <div class="user-info">
             <p><strong>Name:</strong> <?php echo $user['firstname']." ". $user['lastname']; ?></p>
             <p><strong>Gender:</strong> <?php echo $user['gender']; ?></p>
@@ -61,10 +61,10 @@ $conn->close();
         </div>
         <!-- Clock-in and clock-out -->
         <form action="./include/clockin.php" method="post">
-            <button style="padding:15px;" type="submit">Clock In</button>
+            <button class="log-btn" style="padding:15px;" type="submit">Clock In</button>
         </form>
         <form action="./include/clockout.php" method="post">
-            <button style="padding:15px;" type="submit">Clock Out</button>
+            <button class="log-btn" style="padding:15px;" type="submit">Clock Out</button>
         </form>
         <form action="./include/logout.php" method="post">
             <button style=" background-color: #cc4e2e; margin-top: 20px; padding:15px;" type="submit">Logout</button>
