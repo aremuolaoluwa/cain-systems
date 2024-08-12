@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt === false) {
         error_log("Error: " . $sql . "\n" . $conn->error);
-        echo "<script>alert('Preparation of statement failed!'); window.location.href='../test.php';</script>";
+        echo "<script>alert('Preparation of statement failed!'); window.location.href='../registration.php';</script>";
         exit;
     }
 
