@@ -9,9 +9,9 @@
 <body>
     <?php include "header.php"; ?>
     <div class="container reg-form-container">
-        <h2 class="form-title">Student Registration</h2>
         <div class="form-container">
             <form action="./include/reg.php" method="post">
+            <h2 class="form-title" style="margin-bottom: 3rem;">Student Registration</h2>
                 <fieldset>
                     <legend>PERSONAL INFORMATION</legend>
                     <div class="form-wrap">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <fieldset>
+                <fieldset style="margin-bottom: 3rem;">
                     <legend>PARENT'S/GUARDIAN'S INFORMATION</legend>
                     <div class="form-wrap">
                         <div class="form-items">

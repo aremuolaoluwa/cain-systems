@@ -35,5 +35,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])) {
     $stmt->bind_param('sssssssssssssssi', $first_name, $other_name, $last_name, $reg_number, $class, $dob, $name_of_school, $state_of_origin, $year_admitted, $gender, $religion, $guardian_name, $guardian_phone, $occupation, $guardian_address, $id);
     $stmt->execute();
 
-    echo "Student details updated successfully!";
+    echo "<script>alert('Student details updated successfully!'); window.location.href='../edit_std.php';</script>";
 }

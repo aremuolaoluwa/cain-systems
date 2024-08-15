@@ -7,9 +7,6 @@ body {
     box-sizing: border-box;
 }
 
-/* *************
-**************** */
-
 /* Index */
 
 .main-heading {
@@ -36,6 +33,12 @@ ul li img {
     color: rgb(160, 3, 3);
 }
 
+@media (max-width: 600px) {
+    .main-heading {
+        width: 100%;
+    }
+}
+
 .main-container {
     width: 100%;
     margin: 20px auto;
@@ -52,7 +55,8 @@ ul li img {
 .take-attendance-container, 
 .registered-students-container, 
 .enrolled-students-container,
-.download-attendance-container {
+.download-attendance-container,
+.edit-std-container {
     display: flex;
     width: 280px;
     height: 200px;
@@ -95,14 +99,19 @@ ul li img {
     background-color: #e80101;
 }
 
+/* Index page ends here */
 
-/* ******************* */
-/* ********************* */
-/* ************************ */
+
+/* Forms */
 
 .container {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 1000px;
     margin: 0 400px;
+    margin-bottom: 3rem;
     padding: 20px;
 }
 
@@ -119,10 +128,9 @@ ul li img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: #f9f9f9; */
     padding: 20px;
     border-radius: 8px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form fieldset {
@@ -152,6 +160,8 @@ legend  {
 .item label {
     display: block;
     margin-bottom: 5px;
+    text-align: center;
+    color: #a50000;
 }
 
 .item input,
@@ -161,16 +171,85 @@ legend  {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    text-align: center;
 }
 
+/* Forms Ends */
+
+/* Update Student Page */
+
+.search-container {
+    /* background-color: #a50000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 20px;
+}
+
+.search-container input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.search-container input[type="text"]:hover {
+    box-shadow: 0px 0px 10px #a50000;
+}
+
+.search-container input[type="text"]:active {
+    border: 2px solid #a50000;
+    box-shadow: 2px 2px #a50000;
+}
+
+.search-container button[type="submit"] {
+    width: 120px;
+    padding: 6px;
+    background-color: #a50000;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.search-title {
+    color: #a50000;
+    font-size: 2rem;
+}
+
+.src-result {
+    text-align: center;
+}
+
+.src-result a {
+    color: #a50000;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .search-container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-title {
+        color: #a50000;
+        font-size: 1rem;
+    }
+}
+
+/* Update Student Information ends here */
 
 
-/* 
-**
-***
-****
-Tables */
-
+/* Tables */
 
 .tbl-title {
     color: #c50505;
@@ -223,11 +302,10 @@ th, td {
     border: 1px solid #ddd;
     text-align: left;
 }
-th {
-    /* background-color: #f4f4f4; */
-}
 
-/* Button */
+/* Tables End */
+
+/* Buttons */
 
 .enroll-btn {
     width: 120px;
@@ -254,7 +332,7 @@ th {
 .button-container input[type="submit"] {
     width: 100%;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #a50000;
     color: white;
     border: none;
     border-radius: 4px;
@@ -269,29 +347,31 @@ th {
 }
 
 .button-container input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #e80101;
 }
 
+/* Buttons ends here */
 
 
 /* Footer */
-
 
 .footer-nav-bar {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color:#f9f9f9;
-    color: rgb(180, 1, 1);
+    background-color:#000000;
+    /* color: #fff; */
     padding: 10px 0;
     text-align: center;
 }
 .footer-nav-bar a {
     text-decoration: none;
-    color: #a50000;
+    color: #fff;
     word-spacing: .1rem;
     margin-right: 5px;
 }
 .footer-nav-bar a:hover {
     color:rgb(160, 3, 3);
 }
+
+/* Footer Ends */

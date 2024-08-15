@@ -64,6 +64,17 @@
                 </p>
             </div>
         </div>
+        <div class="edit-std-container">
+            <div class="card-wrapper">
+                <h1 class="container-heading">UPDATE STUDENT INFORMATION</h1>
+                <p id="container-heading-text">Click here to modify students information</p>
+                <p>
+                    <a href="edit_std.php">  
+                        <button class="card-btn-click">Click here</button>
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
