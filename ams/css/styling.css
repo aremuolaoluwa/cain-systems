@@ -305,6 +305,31 @@ th, td {
 
 /* Tables End */
 
+/* Attendance starts here */
+
+.att-tbl-wrap {
+    width: 80%;
+    margin: 5rem auto;
+    height: auto;
+}
+
+.att-form tr {
+    width: 100%;
+}
+
+.status-select {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    color: #a50000;
+}
+
+.mark-att-title {
+    margin-top: 3rem;
+    text-align: center;
+    color: #a50000;
+}
+
 /* Buttons */
 
 .enroll-btn {
@@ -341,7 +366,7 @@ th, td {
 }
 
 .att-btn {
-    width: 20%;
+    width: 70%;
     margin: 0 auto;
     padding: 20px;
 }
