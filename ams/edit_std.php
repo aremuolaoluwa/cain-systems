@@ -25,7 +25,7 @@ include './include/edit.php';
     <?php if (isset($result) && $result->num_rows > 0): ?>
         <ul class="src-result">
             <?php while ($row = $result->fetch_assoc()): ?>
-                <li id="src-result"><br><a href="edit_std.php?id=<?= $row['id'] ?>"><?= $row['first_name'] . ' ' . $row['last_name'] ?></a></li>
+                <li id="src-result"><a href="edit_std.php?id=<?= $row['id'] ?>"><?= $row['first_name'] . ' ' . $row['last_name'] ?></a></li>
             <?php endwhile; ?>
         </ul>
     <?php elseif (isset($_POST['search'])): ?>

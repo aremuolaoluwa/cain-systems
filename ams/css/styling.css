@@ -111,7 +111,7 @@ ul li img {
     align-items: center;
     max-width: 1000px;
     margin: 0 400px;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     padding: 20px;
 }
 
@@ -186,7 +186,7 @@ legend  {
     flex-direction: column;
     width: 50%;
     margin: 0 auto;
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     padding: 20px;
 }
 
@@ -222,13 +222,12 @@ legend  {
     font-size: 2rem;
 }
 
-.src-result {
+.src-result li a {
     text-align: center;
-}
-
-.src-result a {
     color: #a50000;
     text-decoration: none;
+    display:block;
+    line-height: 1.8rem;
 }
 
 @media (max-width: 600px) {
@@ -262,6 +261,7 @@ legend  {
     max-height: 90vh;
     box-shadow: #a50000;
     margin: 20px;
+    margin-bottom: 5rem;
 }
 
 .enroll-tbl {

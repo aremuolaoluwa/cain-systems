@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="item">
                                     <label for="religion">Religion</label>
-                                    <select id="religion" name="religion" required>
+                                    <select style="margin-bottom: 2rem;" id="religion" name="religion" required>
                                         <option value="Christianity">Christianity</option>
                                         <option value="Islam">Islam</option>
                                     </select>
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <fieldset style="margin-bottom: 3rem;">
+                <fieldset>
                     <legend>PARENT'S/GUARDIAN'S INFORMATION</legend>
                     <div class="form-wrap">
                         <div class="form-items">
