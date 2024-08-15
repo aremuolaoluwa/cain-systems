@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+    <?php include "header.php"; ?>
     <div class="form-wrap">
         <div class="form-items">
             <h2>Download Attendance</h2>

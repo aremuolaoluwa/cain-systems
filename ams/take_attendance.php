@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+    <?php include "header.php"; ?>
     <form action="./include/mark_att.php" method="post">
         <h2>Take Attendance</h2>
 

@@ -7,6 +7,7 @@
     <title>Students Registration</title>
 </head>
 <body>
+    <?php include "header.php"; ?>
     <div class="container reg-form-container">
         <h2 class="form-title">Student Registration</h2>
         <div class="form-container">

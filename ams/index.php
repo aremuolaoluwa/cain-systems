@@ -7,14 +7,7 @@
     <link rel="stylesheet" href="./css/styling.css">
 </head>
 <body>
-    <div class="main-heading">
-        <ul class="title">
-            <li class="heading-title">
-                <img src="./img/cain.png" alt="CAIN Logo">
-            </li>
-            <li class="heading-subtitle">Attendance Management System</li>
-        </ul>
-    </div>
+    <?php include "header.php"; ?>
     <div class="main-container">
         <div class="registration-container">
             <div class="card-wrapper">

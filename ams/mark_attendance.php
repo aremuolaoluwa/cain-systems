@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="./css/styling.css">
 </head>
 <body>
+    <?php include "header.php"; ?>
     <form action="./include/mark_att.php" method="post">
         <div class="att-table-wrap">
             <h2>Take Attendance</h2>
