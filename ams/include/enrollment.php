@@ -1,5 +1,4 @@
 <?php
-
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -16,11 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $student_id);
+
     if ($stmt->execute()) {
-        echo "<script>alert('$message'); window.location.href='../registered_std.php';</script>";
+        echo "<script>alert('$message'); window.location.href = document.referrer;</script>";
     } else {
-        echo "<script>alert('Error occurred!'); window.location.href='../registered_std.php';</script>";
+        echo "<script>alert('Error occurred!'); window.location.href = document.referrer;</script>";
     }
+
     $stmt->close();
     $conn->close();
 }

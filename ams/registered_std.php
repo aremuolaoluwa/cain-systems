@@ -15,7 +15,7 @@ $result = $conn->query("SELECT * FROM student_profile");
 <body>
     <?php include "header.php"; ?>
     <div class="table-wrap">
-        <h2 class="tbl-title">Students Profile</h2>
+        <h2 class="tbl-title">Registered Students' Information</h2>
         <table class="enroll-tbl">
             <tr>
                 <th>ID</th>
@@ -55,14 +55,14 @@ $result = $conn->query("SELECT * FROM student_profile");
                 <td><?php echo $row['occupation']; ?></td>
                 <td><?php echo $row['guardian_address']; ?></td>
                 <td>
-                    <form method="post" action="./include/enroll.php">
-                        <input type="hidden" name="student_id" value="<?php echo $row['id']; ?>">
-                        <?php if ($row['enrollment_status'] == 'enrolled'): ?>
-                            <button class='enroll-btn' type="submit" name="action" value="unenroll">Unenroll</button>
-                        <?php else: ?>
-                            <button class='enroll-btn' type="submit" name="action" value="enroll">Enroll</button>
-                        <?php endif; ?>
-                    </form>
+                <form method="post" action="./include/enrollment.php">
+                    <input type="hidden" name="student_id" value="<?php echo $row['id']; ?>">
+                    <?php if ($row['enrollment_status'] == 'Enrolled'): ?>
+                        <button class='enroll-btn' type="submit" name="action" value="unenroll">Unenroll</button>
+                    <?php else: ?>
+                        <button class='enroll-btn' type="submit" name="action" value="enroll">Enroll</button>
+                    <?php endif; ?>
+                </form>
                 </td>
             </tr>
             <?php endwhile; ?>

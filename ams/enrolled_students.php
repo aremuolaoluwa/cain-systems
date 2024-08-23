@@ -59,7 +59,7 @@
                             echo "<td>" . $row['occupation'] . "</td>";
                             echo "<td>" . $row['guardian_address'] . "</td>";
                             echo "<td>";
-                            echo "<form method='POST' action='./include/unenroll.php'>";
+                            echo "<form method='POST' action='./include/enrollment.php'>";
                             echo "<input type='hidden' name='student_id' value='" . $row['id'] . "'>";
                             echo "<input type='hidden' name='action' value='unenroll'>";
                             echo "<button type='submit' class='enroll-btn'>Unenroll</button>";
