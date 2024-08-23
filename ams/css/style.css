@@ -1,117 +1,167 @@
 body {
+    width: 98%;
     margin: 0;
     height: 100vh;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Index */
+
+.main-heading {
+    width: 50%;
+    padding: 0;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    box-sizing: border-box;
 }
 
+ul, .title {
+    list-style-type: none;
+    line-height: 0;
+}
 
-/* Index page */
+ul li img {
+    width: 200px;
+    height: 150px;
+}
 
+.heading-subtitle {
+    color: rgb(160, 3, 3);
+}
 
-.containers {
+@media (max-width: 600px) {
+    .main-heading {
+        width: 100%;
+    }
+}
+
+.main-container {
+    width: 100%;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 800px;
-}
-
-.div1, .div2, .div3, .div4, .div5 {
-    flex: 1 1 300px; /* Flex properties to control width */
-    margin: 10px;
-    background-color: #008000;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    overflow: hidden;
+    gap: 10px;
+    max-width: 90%;
 }
 
-.wrappers {
-    padding: 35px;
+.registration-container, 
+.take-attendance-container, 
+.registered-students-container, 
+.enrolled-students-container,
+.download-attendance-container,
+.edit-std-container {
+    display: flex;
+    width: 280px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    /* overflow: auto; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.wrappers h1 {
-    color: #ffffff;
+.card-wrapper {
+    /* background-color: #eaeeea; */
+    width: 100%;
+}
+
+.container-heading {
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
-.wrappers p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #ffffff;
+#container-heading-text {
+    margin: 10px 0;
 }
 
-.wrappers button {
-    background-color: #ffffff;
-    color: #008000;
-    border: none;
+.card-btn-click {
+    width: 150px;
     padding: 10px 20px;
     font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d91e0d;
+    color: white;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.wrappers button:hover {
-    background-color: #c9c9c9f7;
-}
-
-.wrappers a {
-    text-decoration: none;
-    color: #008000;
-}
-
-.wrappers a:hover {
-    text-decoration: underline;
 }
 
 
+.card-btn-click:hover {
+    background-color: #e80101;
+}
 
-/* Registration Page */
+/* Index page ends here */
 
 
-.form-wrap {
-    width: 100%;
+/* Forms */
+
+.container {
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1000px;
+    margin: 0 400px;
+    margin-bottom: 2.5rem;
+    padding: 20px;
 }
 
-.form-items {
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 80%;
-    max-width: 600px;
+.reg-form-container {
+    height: auto;
 }
 
 .form-title {
-    color: #058239;
-    text-transform: uppercase;
-    margin-bottom: 45px;
+    text-align: center;
+    text-transform:uppercase;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form fieldset {
+    border: none;
+}
+
+legend  {
+    font-weight: bold;
+    color: #c50505;
+}
+
+.form-items {
+    margin-bottom: 10px;
 }
 
 .form-row {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    margin: -10px; /* to counteract item padding */
 }
 
 .item {
-    flex: 1;
-    margin-right: 10px;
+    flex: 1 1 calc(33.33% - 20px);
+    margin: 10px;
 }
 
 .item label {
     display: block;
     margin-bottom: 5px;
-    color: #555;
+    text-align: center;
+    color: #a50000;
 }
 
 .item input,
@@ -121,163 +171,249 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}
-
-.button-container {
-    margin-top: 20px;
-}
-
-.button-container input[type="submit"] {
-    background-color: #2ecc71;
-    width: 100%;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.button-container input[type="submit"]:hover {
-    background-color: #27ae60;
-}
-
-.footer-nav-bar {
-    margin-top: 20px;
-}
-
-.footer-nav-bar a {
-    text-decoration: none;
-    color: #555;
-    margin-right: 10px;
-}
-
-.footer-nav-bar a:hover {
-    text-decoration: underline;
-}
-
-
-
-/* Mark Attendance  */
-
-
-h2 {
-    color: #09813b;
-    margin-bottom: 20px;
     text-align: center;
 }
 
-/*table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}*/
+/* Forms Ends */
 
-table th,
-table td {
-    padding: 10px;
-    border: 1px solid #ccc;
-}
+/* Update Student Page */
 
-.button-container {
-    margin-top: 20px;
-}
-
-.button-container input[type="submit"] {
-    background-color: #2ecc71;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.button-container input[type="submit"]:hover {
-    background-color: #27ae60;
-}
-
-
-
-/* Enrolled Students */
-
-
-.table-wrap {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+.search-container {
+    /* background-color: #a50000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 2.5rem;
     padding: 20px;
 }
 
-h2 {
-    color: #09813b;
+.search-container input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-table {
+.search-container input[type="text"]:hover {
+    box-shadow: 0px 0px 10px #a50000;
+}
+
+.search-container input[type="text"]:active {
+    border: 2px solid #a50000;
+    box-shadow: 2px 2px #a50000;
+}
+
+.search-container button[type="submit"] {
+    width: 120px;
+    padding: 6px;
+    background-color: #a50000;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.search-title {
+    color: #a50000;
+    font-size: 2rem;
+}
+
+.src-result li a {
+    text-align: center;
+    color: #a50000;
+    text-decoration: none;
+    display:block;
+    line-height: 1.8rem;
+}
+
+@media (max-width: 600px) {
+    .search-container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-title {
+        color: #a50000;
+        font-size: 1rem;
+    }
+}
+
+/* Update Student Information ends here */
+
+
+/* Tables */
+
+.tbl-title {
+    color: #c50505;
+    text-align: center;
+}
+
+.table-wrap {
+    overflow: auto;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    max-height: 90vh;
+    box-shadow: #a50000;
+    margin: 20px;
+    margin-bottom: 5rem;
 }
 
-table th,
-table td {
-    padding: 10px;
-    border: 1px solid #ccc;
+.enroll-tbl {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.enroll-tbl th, .enroll-tbl td {
+    border: 1px solid #ffffff;
+    padding: 15px;
     text-align: left;
 }
 
-table th {
-    background-color: #f2f2f2;
+.enroll-tbl th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
-table td {
-    background-color: #ffffff;
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
-
-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+th {
+    background-color: #a50000;
+    color: white;
 }
 
+table tr:nth-child(even){
+    background-color: #f4f4f4;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Tables End */
+
+/* Attendance starts here */
+
+.att-tbl-wrap {
+    width: 80%;
+    margin: 5rem auto;
+    height: auto;
+}
+
+.att-form tr {
+    width: 100%;
+}
+
+.status-select {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    color: #a50000;
+}
+
+.mark-att-title {
+    margin-top: 3rem;
+    text-align: center;
+    color: #a50000;
+}
 
 /* Download Attendance */
 
-
-#attendance_date {
-        margin-bottom: 10px;
-        color: #555;
+.download-form-wrap {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
 }
 
-#att-date {
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+.download-form-title {
+    text-align: center;
+    color: #a50000;
+}
+
+/* Buttons */
+
+.enroll-btn {
+    width: 120px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #c50505;
+    color: white;
+    cursor: pointer;
+}
+.enroll-btn:hover {
+    background-color: #f51515;
+}
+
+.enroll-table-wrapper {
+    width: 50%;
+}
+
+.button-container {
+    text-align: center;
+    /* margin-top: 20px; */
+}
+
+.button-container input[type="submit"] {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #a50000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.att-btn {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.button-container input[type="submit"]:hover {
+    background-color: #e80101;
+}
+
+/* Buttons ends here */
 
 
-    /* Footer */
-
+/* Footer */
 
 .footer-nav-bar {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color:#f9f9f9;
-    color: white;
+    background-color:#000000;
+    /* color: #fff; */
     padding: 10px 0;
     text-align: center;
 }
+.footer-nav-bar a {
+    text-decoration: none;
+    color: #fff;
+    word-spacing: .1rem;
+    margin-right: 5px;
+}
+.footer-nav-bar a:hover {
+    color:rgb(160, 3, 3);
+}
+
+/* Footer Ends */

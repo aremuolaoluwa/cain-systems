@@ -9,7 +9,7 @@ include './include/edit.php';
 <head>
     <meta charset="UTF-8">
     <title>Edit Student Information</title>
-    <link rel="stylesheet" href="./css/styling.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <?php include "header.php"; ?>

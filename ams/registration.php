@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styling.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Students Registration</title>
 </head>
 <body>
@@ -38,6 +38,7 @@
                                 <div class="item">
                                     <label for="class">Class</label>
                                     <select id="class" name="class" required>
+                                        <option value="" disabled selected>Select Class</option>
                                         <option value="JSS1">JSS1</option>
                                         <option value="JSS2">JSS2</option>
                                         <option value="JSS3">JSS3</option>
@@ -69,6 +70,7 @@
                                 <div class="item">
                                     <label for="gender">Gender</label>
                                     <select id="gender" name="gender" required>
+                                        <option value="" disabled selected>Select Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
@@ -76,6 +78,7 @@
                                 <div class="item">
                                     <label for="religion">Religion</label>
                                     <select style="margin-bottom: 2rem;" id="religion" name="religion" required>
+                                        <option value="" disabled selected>Select Religion</option>
                                         <option value="Christianity">Christianity</option>
                                         <option value="Islam">Islam</option>
                                     </select>

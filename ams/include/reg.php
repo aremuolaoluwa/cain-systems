@@ -33,10 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssssssssssssss", $first_name, $other_name, $last_name, $reg_number, $class, $dob, $name_of_school, $state, $year, $gender, $religion, $guardian_name, $guardian_phone, $occupation, $address);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Registration successful!'); window.location.href='../test.php';</script>";
+        echo "<script>alert('Registration successful!'); window.location.href='../registration.php';</script>";
     } else {
         error_log("Error: " . $sql . "\n" . $stmt->error);
-        echo "<script>alert('Registration failed! Please try again later'); window.location.href='../test.php';</script>";
+        echo "<script>alert('Registration failed! Please try again later'); window.location.href='../registration.php';</script>";
     }
 
     $stmt->close();
