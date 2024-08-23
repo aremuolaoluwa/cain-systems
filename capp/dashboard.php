@@ -43,10 +43,25 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="location.js"></script>
     <script>
         function displayAlert(message) {
             alert(message);
         }
+
+        const WORKPLACE_LONGITUDE = 3.261714; 
+        const WORKPLACE_LATITUDE = 6.5503825;
+
+
+        function updateWorkerAttendance(btn) {
+            return () => {
+                var myButton = document.getElementById(btn)
+                console.log (myButton)
+                myButton.click()
+
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -59,16 +74,40 @@ $conn->close();
             <p><strong>Last Clock-In:</strong> <?php echo isset($last_clock_in_time) ? $last_clock_in_time : "N/A"; ?></p>
             <p><strong>Last Clock-Out:</strong> <?php echo isset($last_clock_out_time) ? $last_clock_out_time : "N/A"; ?></p>
         </div>
-        <!-- Clock-in and clock-out -->
+
+        <!-- Clock-in -->
+        
         <form action="./include/clockin.php" method="post">
-            <button class="log-btn" style="padding:15px;" type="submit">Clock In</button>
+            <button class="log-btn" id="clockin-btn" style="padding:15px;" type="submit">Clock In</button>
+            <input type="text" name="latitude" id="clockin-latitude">
+            <input type="text" name="longitude" id="clockin-longitude">
         </form>
+            
+        
+        <!-- Clockout -->
+
         <form action="./include/clockout.php" method="post">
-            <button class="log-btn" style="padding:15px;" type="submit">Clock Out</button>
+            <input type="text" name="latitude" id="clockout-latitude">
+            <input type="text" name="longitude" id="clockout-longitude">
+            <button class="log-btn" id="clockout-btn" style="padding:15px;" type="submit">Clock Out</button>
         </form>
+        <button onclick="getLocation(updateWorkerAttendance('clockin-btn'), WORKPLACE_LONGITUDE, WORKPLACE_LATITUDE, 'clockin')">clockin2</button>
         <form action="./include/logout.php" method="post">
             <button style=" background-color: #cc4e2e; margin-top: 20px; padding:15px;" type="submit">Logout</button>
         </form>
     </div>
+
+    <!-- JavaScript to track location -->
+
+    <script>
+        
+        document.getElementById("clockin-btn").style.display="none"
+        document.getElementById("clockout-btn").style.display="none"
+         //  the longitude and latitude of your office
+
+
+        // this function should run when they click the 
+        // button to submit their attendance or to clock themselves in
+    </script>
 </body>
 </html>
