@@ -56,7 +56,8 @@ ul li img {
 .registered-students-container, 
 .enrolled-students-container,
 .download-attendance-container,
-.edit-std-container {
+.edit-std-container,
+.prosp-std-container {
     display: flex;
     width: 280px;
     height: 200px;
@@ -385,7 +386,6 @@ th, td {
 }
 
 .attendance-content-wrap {
-    background-color: orange;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -452,7 +452,7 @@ th, td {
     width: 100%;
     background-color:#000000;
     /* color: #fff; */
-    padding: 10px 0;
+    padding: 10px;
     text-align: center;
 }
 .footer-nav-bar a {

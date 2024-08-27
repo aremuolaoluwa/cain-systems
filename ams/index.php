@@ -75,6 +75,28 @@
                 </p>
             </div>
         </div>
+        <div class="prosp-std-container">
+            <div class="card-wrapper">
+                <h1 class="container-heading">PROSPECTIVE STUDENT REGISTRATION</h1>
+                <p id="container-heading-text">Click here to register prospective student</p>
+                <p>
+                    <a href="prospective_std_form.php">  
+                        <button class="card-btn-click">Click here</button>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="prosp-std-container">
+            <div class="card-wrapper">
+                <h1 class="container-heading">PROSPECTIVE STUDENTS</h1>
+                <p id="container-heading-text">Click here to access prospective students' details</p>
+                <p>
+                    <a href="prospective_students.php">  
+                        <button class="card-btn-click">Click here</button>
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
