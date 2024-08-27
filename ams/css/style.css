@@ -1,7 +1,7 @@
 body {
     width: 98%;
     margin: 0;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
@@ -308,7 +308,7 @@ th, td {
 
 .att-tbl-wrap {
     width: 80%;
-    margin: 5rem auto;
+    margin: 0 auto;
     height: auto;
 }
 
@@ -324,7 +324,6 @@ th, td {
 }
 
 .mark-att-title {
-    margin-top: 3rem;
     text-align: center;
     color: #a50000;
 }
@@ -345,6 +344,56 @@ th, td {
     text-align: center;
     color: #a50000;
 }
+
+/* Take Attendance */
+
+.filter-wrap {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-form select {
+    width: 20%;
+    padding: 10px 20px;
+    color: #a50000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.filter-form button {
+    background-color: #a50000;
+    width: 20%;
+    margin-left: 20px;
+    padding: 8px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.filter-form button:hover {
+    background-color: #e80101;
+}
+
+.attendance-content-wrap {
+    background-color: orange;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Attendance Ends Here */
 
 /* Buttons */
 
@@ -382,8 +431,9 @@ th, td {
 }
 
 .att-btn {
-    width: 70%;
+    width: 35%;
     margin: 0 auto;
+    margin-bottom: 10rem;
     padding: 20px;
 }
 
