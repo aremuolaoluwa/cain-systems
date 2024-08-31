@@ -87,7 +87,7 @@
                                             echo "<td>" . htmlspecialchars($row["reg_number"]) . "</td>";
                                             echo "<td>" . htmlspecialchars($row["class"]) . "</td>";
                                             echo "<td>";
-                                            echo "<label for='status_{$row['id']}'>";  // Add label for accessibility
+                                            echo "<label for='status_{$row['id']}'>";
                                             echo "<select name='status[" . htmlspecialchars($row["id"]) . "]' id='status_{$row['id']}' class='status-select'>";
                                             echo "<option value='Present'>Present</option>";
                                             echo "<option value='Absent'>Absent</option>";
@@ -95,10 +95,9 @@
                                             echo "</label>";
                                             echo "</td>";
                                             echo "<td>";
-                                            echo "<label for='program_{$row['id']}'>";  // Add label for accessibility
+                                            echo "<label for='program_{$row['id']}'>";
                                             echo "<select name='program[" . htmlspecialchars($row["id"]) . "]' id='program_{$row['id']}' class='program-select'>";
-                                            // Assuming $programOptions variable is defined somewhere
-                                            echo isset($programOptions) ? $programOptions : '';  // Safely use $programOptions
+                                            echo isset($programOptions) ? $programOptions : '';
                                             echo "</select>";
                                             echo "</label>";
                                             echo "</td>";

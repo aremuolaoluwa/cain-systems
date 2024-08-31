@@ -25,11 +25,10 @@ CREATE TABLE programs (
 
 -- Insert values into program column
 
-Insert INTO program VALUES (
-    'Mentorship Class',
-    'Mathematics Tutorial',
-    'English Tutorial',
-    'Life Hacks',
-    'Games Day',
-    'Career Enrichment'
-)
+Insert INTO programs (program) VALUES
+    ('Mentorship Class'),
+    ('Mathematics Tutorial'),
+    ('English Tutorial'),
+    ('Life Hacks'),
+    ('Games Day'),
+    ('Career Enrichment')
