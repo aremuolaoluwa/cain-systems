@@ -7,6 +7,7 @@
     <title>Prospective Student Registration</title>
 </head>
 <body>
+    <?php include "side-drawer.php"; ?>
     <?php include "header.php"; ?>
     <div class="container reg-form-container">
         <div class="form-container">

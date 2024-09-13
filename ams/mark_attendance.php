@@ -7,8 +7,9 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+    <?php include "side-drawer.php"; ?>
+    <?php include "header.php"; ?>
     <div class="attendance-content-wrap">
-        <?php include "header.php"; ?>
         <form class="filter-form" action="" method="post">
             <div class="filter-container">
                 <div class="filter-wrap">
@@ -120,7 +121,6 @@
                 </div>
             </div>
         </form>
-        <?php include "footer.php"; ?>
     </div>
 </body>
 </html>

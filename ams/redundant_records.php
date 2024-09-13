@@ -53,6 +53,7 @@
     </style>
 </head>
 <body>
+    <?php include "side-drawer.php"; ?>
     <?php include "header.php"; ?>
     <h1>Redundant Student Records</h1>
     <form action="" method="post">
