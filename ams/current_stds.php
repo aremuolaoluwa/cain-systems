@@ -9,13 +9,13 @@ $result = $conn->query("SELECT * FROM student_profile");
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registered Students</title>
+<title>Current Students</title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
     <?php include "header.php"; ?>
     <div class="table-wrap">
-        <h2 class="tbl-title">Registered Students' Information</h2>
+        <h2 class="tbl-title">Current Students</h2>
         <table class="enroll-tbl">
             <tr>
                 <th>ID</th>
@@ -34,7 +34,7 @@ $result = $conn->query("SELECT * FROM student_profile");
                 <th>Guardian Phone</th>
                 <th>Occupation</th>
                 <th>Guardian Address</th>
-                <th>Enrollment</th>
+                <th>Action</th>
             </tr>
             <?php while ($row = $result->fetch_assoc()): ?>
             <tr>
@@ -55,13 +55,9 @@ $result = $conn->query("SELECT * FROM student_profile");
                 <td><?php echo $row['occupation']; ?></td>
                 <td><?php echo $row['guardian_address']; ?></td>
                 <td>
-                <form method="post" action="./include/enrollment.php">
+                <form method="post" action="./include/delete.php">
                     <input type="hidden" name="student_id" value="<?php echo $row['id']; ?>">
-                    <?php if ($row['enrollment_status'] == 'Enrolled'): ?>
-                        <button class='enroll-btn' type="submit" name="action" value="unenroll">Unenroll</button>
-                    <?php else: ?>
-                        <button class='enroll-btn' type="submit" name="action" value="enroll">Enroll</button>
-                    <?php endif; ?>
+                    <button class='enroll-btn' type="submit" name="action" value="delete">Delete</button>
                 </form>
                 </td>
             </tr>

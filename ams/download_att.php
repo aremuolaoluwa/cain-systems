@@ -27,11 +27,13 @@
                                 <label for="program_type">Program Type</label>
                                 <select id="program_name" name="program_name" required>
                                     <option value="" disabled selected>Select Program</option>
-                                    <option value="Daily Tutorial">Daily Tutorial</option>
-                                    <option value="Life Hacks">Life Hacks</option>
-                                    <option value="Mentorship">Mentorship</option>
+                                    <option value="Mathematics Tutorial">Mathematics Tutorial</option>
+                                    <option value="English Tutorial">English Tutorial</option>
                                     <option value="ICT4U">ICT4U</option>
+                                    <option value="Life Hacks">Life Hacks</option>
+                                    <option value="Games Day">Games Day</option>
                                     <option value="Career Enrichment">Career Enrichment</option>
+                                    <option value="Mentorship Class">Mentorship Class</option>
                                 </select>
                             </div>
                         </div>

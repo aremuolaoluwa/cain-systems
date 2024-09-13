@@ -33,17 +33,17 @@
         </div>
         <div class="registered-students-container">
             <div class="card-wrapper">
-                <h1 class="container-heading">REGISTERED STUDENTS</h1>
+                <h1 class="container-heading">CURRENT STUDENTS</h1>
                 <p id="container-heading-text">Access registered students' profile here</p>
                 <p>
-                    <a href="registered_std.php">  
+                    <a href="current_stds.php">  
                         <button class="card-btn-click">Click here</button>
                     </a>
                 </p>
             </div>
         </div>
         <div class="enrolled-students-container">
-            <div class="card-wrapper">
+            <!-- <div class="card-wrapper">
                 <h1 class="container-heading">ENROLLED STUDENTS</h1>
                 <p id="container-heading-text">Access registered students' profile here</p>
                 <p>
@@ -51,7 +51,7 @@
                         <button class="card-btn-click">Click here</button>
                     </a>
                 </p>
-            </div>
+            </div> -->
         </div>
         <div class="download-attendance-container">
             <div class="card-wrapper">

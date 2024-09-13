@@ -198,9 +198,9 @@ legend  {
     text-align: center;
 }
 
-.search-container input[type="text"]:hover {
+/* .search-container input[type="text"]:hover {
     box-shadow: 0px 0px 10px #a50000;
-}
+} */
 
 .search-container input[type="text"]:active {
     border: 2px solid #a50000;

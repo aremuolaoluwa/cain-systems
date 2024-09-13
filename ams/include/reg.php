@@ -20,6 +20,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $occupation = filter_var($_POST['occupation'], FILTER_SANITIZE_STRING);
     $address = filter_var($_POST['address'], FILTER_SANITIZE_STRING);
 
+    $check_sql = "SELECT COUNT(*) FROM student_profile WHERE reg_number = ?";
+    $check_stmt = $conn->prepare($check_sql);
+    
+    if ($check_stmt === false) {
+        error_log("Error: " . $check_sql . "\n" . $conn->error);
+        echo "<script>alert('Failed to prepare check statement!'); window.location.href='../registration.php';</script>";
+        exit;
+    }
+
+    $check_stmt->bind_param("s", $reg_number);
+    $check_stmt->execute();
+    $check_stmt->bind_result($count);
+    $check_stmt->fetch();
+    $check_stmt->close();
+
+    if ($count > 0) {
+        echo "<script>alert('A student with this registration number already exists!'); window.location.href='../registration.php';</script>";
+        exit;
+    }
+
     $sql = "INSERT INTO student_profile (first_name, other_name, last_name, reg_number, class, dob, name_of_school, state_of_origin, year_admitted, gender, religion, guardian_name, guardian_phone, occupation, guardian_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmt = $conn->prepare($sql);

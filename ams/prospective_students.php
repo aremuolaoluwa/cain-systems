@@ -15,7 +15,7 @@ $result = $conn->query("SELECT * FROM prospective_students");
 <body>
     <?php include "header.php"; ?>
     <div class="table-wrap">
-        <h2 class="tbl-title">Registered Students' Information</h2>
+        <h2 class="tbl-title">Prospective Students' Information</h2>
         <table class="enroll-tbl">
             <tr>
                 <th>ID</th>

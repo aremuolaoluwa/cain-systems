@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Students Registration</title>
+    <title>Prospective Student Registration</title>
 </head>
 <body>
     <?php include "header.php"; ?>
     <div class="container reg-form-container">
         <div class="form-container">
             <form action="./include/prosp_std_reg.php" method="post">
-            <h2 class="form-title" style="margin-bottom: 3rem;">Prospective Student Registration</h2>
+            <h2 class="form-title" style="margin-bottom: 3rem;">Prospective Students Registration</h2>
                 <fieldset>
                     <legend>PERSONAL INFORMATION</legend>
                     <div class="form-wrap">
