@@ -37,7 +37,7 @@
                 <?php
                     include './include/db.php';
 
-                    $sql = "SELECT * FROM student_profile WHERE enrollment_status = 'enrolled'";
+                    $sql = "SELECT * FROM student_profile WHERE enrollment_status = 'unenrolled'";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {

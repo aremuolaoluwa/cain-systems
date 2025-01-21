@@ -54,12 +54,11 @@
             cursor: pointer;
             color: #a50000;
             margin: 10px;
-            z-index: 1000; /* Ensure button is on top */
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
-    <!-- The side drawer -->
     <div id="sideDrawer" class="side-drawer">
         <a href="javascript:void(0)" class="closebtn" onclick="closeDrawer()">&times;</a>
         <a href="index.php">Home</a>

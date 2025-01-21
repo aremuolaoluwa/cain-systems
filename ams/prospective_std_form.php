@@ -33,6 +33,10 @@
                             </div>
                             <div class="form-row">
                                 <div class="item">
+                                    <label for="reg_number">CAIN Reg. No</label>
+                                    <input type="text" id="reg_number" name="reg_number" required>
+                                </div>
+                                <div class="item">
                                     <label for="class">Intended Class</label>
                                     <select id="class" name="class" required>
                                         <option value="" disabled selected>Select Class</option>
@@ -58,6 +62,10 @@
                                     <label for="sor">State of Origin</label>
                                     <input type="text" id="sor" name="state_of_origin" required>
                                 </div>
+                                <div class="item">
+                                    <label for="year_admitted">Year Admitted</label>
+                                    <input type="text" id="year_admitted" name="year_admitted" required>
+                                </div>
                             </div>
                             <div class="form-row">
                                 <div class="item">
@@ -66,6 +74,14 @@
                                         <option value="" disabled selected>Select Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="item">
+                                    <label for="religion">Religion</label>
+                                    <select style="margin-bottom: 2rem;" id="religion" name="religion" required>
+                                        <option value="" disabled selected>Select Religion</option>
+                                        <option value="Christianity">Christianity</option>
+                                        <option value="Islam">Islam</option>
                                     </select>
                                 </div>
                             </div>

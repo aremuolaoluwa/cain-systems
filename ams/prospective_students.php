@@ -23,11 +23,14 @@ $result = $conn->query("SELECT * FROM prospective_students");
                 <th>First Name</th>
                 <th>Other Name</th>
                 <th>Last Name</th>
+                <th>Registration Number</th>
                 <th>Intended Class</th>
                 <th>Date of Birth</th>
                 <th>School Name</th>
                 <th>State of Origin</th>
+                <th>Year Admitted</th>
                 <th>Gender</th>
+                <th>Religion</th>
                 <th>Guardian Name</th>
                 <th>Guardian Phone</th>
                 <th>Occupation</th>
@@ -40,11 +43,14 @@ $result = $conn->query("SELECT * FROM prospective_students");
                 <td><?php echo $row['first_name']; ?></td>
                 <td><?php echo $row['other_name']; ?></td>
                 <td><?php echo $row['last_name']; ?></td>
+                <td><?php echo $row['reg_number']; ?></td>
                 <td><?php echo $row['class']; ?></td>
                 <td><?php echo $row['dob']; ?></td>
                 <td><?php echo $row['name_of_school']; ?></td>
                 <td><?php echo $row['state_of_origin']; ?></td>
+                <td><?php echo $row['year_admitted']; ?></td>
                 <td><?php echo $row['gender']; ?></td>
+                <td><?php echo $row['religion']; ?></td>
                 <td><?php echo $row['guardian_name']; ?></td>
                 <td><?php echo $row['guardian_phone']; ?></td>
                 <td><?php echo $row['occupation']; ?></td>
