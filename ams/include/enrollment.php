@@ -21,18 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("No student found with the provided ID.");
     }
 
-    // Fetch student data from prospective_students table
     $student = $check_result->fetch_assoc();
 
-    // Prepare the SQL query to insert data into students_profile table
     if ($action === 'enroll') {
         $insert_sql = "INSERT INTO student_profile 
             (first_name, other_name, last_name, reg_number, class, dob, name_of_school, state_of_origin, year_admitted, gender, religion, guardian_name, guardian_phone, occupation, guardian_address) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-        // For 'prospective_students' table, 'reg_number' and 'year_admitted' may not exist, so we need to assign default values or generate them
-        // $reg_number = generateRegNumber();  // This function should generate a unique registration number
-        // $year_admitted = date("Y");  // Assuming current year as the admission year
 
         $stmt = $conn->prepare($insert_sql);
         $stmt->bind_param(
