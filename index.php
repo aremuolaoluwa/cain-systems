@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="./main/main.css">
 </head>
 <body>
-    <div class="logo-title">
-        <img src="./img/cain.png" alt="CAIN Logo">
+    <div class="top-header">
+        <!-- <div class="logo-title"> -->
+            <img src="./img/CainWhiteLogo.png" alt="CAIN Logo">
+        </div>
     </div>
     <div class="container">
         <div class="card">
@@ -20,9 +22,9 @@
         </div>
         <div class="card">
             <div class="wrapper">
-                <h1>CLOCK-IN SYSTEM</h1>
-                <p>Clock-in and Clock-out system for staff and students</p>
-                <a href="./capp/index.php"><button>Click here</button></a>
+                <h1>CLOCK-IN <br>SYSTEM</h1>
+                <p class="clockin">Clock-in and Clock-out system for staff and students</p>
+                <a href="./capp/index.php"><button class="clockin-btn">Click here</button></a>
             </div>
         </div>
     </div>
