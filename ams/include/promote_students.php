@@ -8,7 +8,7 @@ $autoAcademicYear = $currentYear . "/" . $nextYear;
 
 $newAcademicYear = "2025/2026";
 
-// check if promotion already done for this academic year
+// check if promotion already done for the current academic year
 $check = $conn->query("SELECT COUNT(*) as count 
                        FROM student_profile 
                        WHERE previous_class IS NOT NULL 
@@ -36,7 +36,6 @@ if ($prevRow['c'] > 0) {
     $referenceColumn = "previous_class";
 }
 
-// apply promotions
 foreach ($promotions as $oldClass => $newClass) {
     $conn->query("UPDATE student_profile 
                   SET class='$newClass' 
