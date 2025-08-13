@@ -43,15 +43,15 @@
             </div>
         </div>
         <div class="enrolled-students-container">
-            <!-- <div class="card-wrapper">
-                <h1 class="container-heading">ENROLLED STUDENTS</h1>
-                <p id="container-heading-text">Access registered students' profile here</p>
+            <div class="card-wrapper">
+                <h1 class="container-heading">PROMOTE STUDENTS</h1>
+                <p id="container-heading-text">Promote students to another academic year</p>
                 <p>
-                    <a href="enrolled_students.php">  
+                    <a href="promote_students.php">  
                         <button class="card-btn-click">Click here</button>
                     </a>
                 </p>
-            </div> -->
+            </div>
         </div>
         <div class="download-attendance-container">
             <div class="card-wrapper">
