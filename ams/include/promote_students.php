@@ -56,3 +56,6 @@ echo "Automatic next academic year calculated as: $autoAcademicYear (for future 
 echo "<a href='rollback.php'>Rollback Promotions</a>";
 
 $conn->close();
+
+// to log promotions history
+file_put_contents(__DIR__ . '/promotion_log.txt', date('Y-m-d H:i:s') . " - Promotion run for $newAcademicYear by admin: " . ($_SESSION['username'] ?? 'unknown') . "\n", FILE_APPEND);
