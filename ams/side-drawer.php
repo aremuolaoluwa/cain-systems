@@ -70,6 +70,7 @@
         <a href="mark_attendance.php">Take Attendance</a>
         <a href="prospective_students.php">Prospective Students</a>
         <a href="download_att.php">Download Attendance</a>
+        <a href="./include/logout.php">Logout</a>
     </div>
 
     <span class="menu-button" onclick="openDrawer()">&#9776; Menu</span>

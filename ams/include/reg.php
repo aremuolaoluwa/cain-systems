@@ -20,6 +20,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $occupation = filter_var($_POST['occupation'], FILTER_SANITIZE_STRING);
     $address = filter_var($_POST['address'], FILTER_SANITIZE_STRING);
 
+    // ✅ Academic year logic (September–July)
+    $currentYear = date("Y");
+    $currentMonth = date("n"); // 1–12
+
+    if ($currentMonth >= 9) {
+        // September–December → new session starts
+        $academic_year = $currentYear . "/" . ($currentYear + 1);
+    } else {
+        // January–August → still the previous session
+        $academic_year = ($currentYear - 1) . "/" . $currentYear;
+    }
+
+    // ✅ Check if student already exists
     $check_sql = "SELECT COUNT(*) FROM student_profile WHERE reg_number = ?";
     $check_stmt = $conn->prepare($check_sql);
     
@@ -40,7 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $sql = "INSERT INTO student_profile (first_name, other_name, last_name, reg_number, class, dob, name_of_school, state_of_origin, year_admitted, gender, religion, guardian_name, guardian_phone, occupation, guardian_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    // ✅ Insert with academic year
+    $sql = "INSERT INTO student_profile 
+        (first_name, other_name, last_name, reg_number, class, dob, name_of_school, state_of_origin, year_admitted, gender, religion, guardian_name, guardian_phone, occupation, guardian_address, academic_year) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmt = $conn->prepare($sql);
 
@@ -50,10 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $stmt->bind_param("sssssssssssssss", $first_name, $other_name, $last_name, $reg_number, $class, $dob, $name_of_school, $state, $year, $gender, $religion, $guardian_name, $guardian_phone, $occupation, $address);
+    $stmt->bind_param("ssssssssssssssss", 
+        $first_name, $other_name, $last_name, $reg_number, $class, $dob, $name_of_school, 
+        $state, $year, $gender, $religion, $guardian_name, $guardian_phone, $occupation, $address, $academic_year);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Registration successful!'); window.location.href='../registration.php';</script>";
+        echo "<script>alert('Registration successful! Academic Year: $academic_year'); window.location.href='../registration.php';</script>";
     } else {
         error_log("Error: " . $sql . "\n" . $stmt->error);
         echo "<script>alert('Registration failed! Please try again later'); window.location.href='../registration.php';</script>";

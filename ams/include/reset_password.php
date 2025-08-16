@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare("UPDATE admins SET password_hash=?, reset_token=NULL, reset_expires=NULL WHERE id=?");
     $stmt->bind_param("si", $newPass, $admin['id']);
     if ($stmt->execute()) {
-        echo "Password updated. <a href='login.php'>Login</a>";
+        echo "Password updated. <a href='../index.php'>Login</a>";
     } else {
         echo "Error updating password.";
     }
