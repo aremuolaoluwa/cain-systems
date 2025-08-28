@@ -25,14 +25,19 @@ if ($adminExists && (!isset($_GET['setup']) || $_GET['setup'] !== $setupToken)) 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Registration</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="apple-touch-icon" href="/cms/cainfavicon.png">
 </head>
 <body>
-    <form action="./include/register.php<?php echo isset($_GET['setup']) ? '?setup=' . htmlspecialchars($_GET['setup']) : ''; ?>" method="post">
-        <h2>Register Admin</h2>
-        <input type="text" name="username" placeholder="Username" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button type="submit">Register</button>
-    </form>
+    <div class="form-box">
+        <form action="./include/register.php<?php echo isset($_GET['setup']) ? '?setup=' . htmlspecialchars($_GET['setup']) : ''; ?>" method="post">
+            <h2>Register Admin</h2>
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <button type="submit">Register</button>
+            <p>Have an account? <a href="index.php">Login</a></p>
+        </form>
+    </div>
 </body>
 </html>

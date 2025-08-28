@@ -27,7 +27,7 @@
                         <input type="text" id="username" name="username" required>
                     </div>
                     <div class="item">
-                        <label for="password">password</label>
+                        <label for="password">Password</label>
                         <input type="password" id="password" name="password" required>
                     </div>
                 </div>

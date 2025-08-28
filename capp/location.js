@@ -1,61 +1,43 @@
-console.log('locationFileActive')
+console.log('locationFileActive');
 function calculateDistance(lat1, lon1, lat2, lon2) {
-  const R = 6371; // Radius of the Earth in kilometers
-  const dLat = ((lat2 - lat1) * Math.PI) / 180; // Convert degrees to radians
-  const dLon = ((lon2 - lon1) * Math.PI) / 180; // Convert degrees to radians
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos((lat1 * Math.PI) / 180) *
-      Math.cos((lat2 * Math.PI) / 180) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
+  const R = 6371; // km
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLon/2)**2;
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  const distance = R * c; // Distance in kilometers
-  return distance;
+  return R * c; // km
 }
 
-function getLocation(callback, WORKPLACE_LONGITUDE, WORKPLACE_LATITUDE, state) {
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(
-      function (position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
+function getLocation(callback, WORKPLACE_LATITUDE, WORKPLACE_LONGITUDE, state) {
+  if (!('geolocation' in navigator)) { alert('Geolocation not supported'); return; }
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      const distanceKm = calculateDistance(latitude, longitude, WORKPLACE_LATITUDE, WORKPLACE_LONGITUDE);
+      const distanceM = distanceKm * 1000;
 
-        const distance = calculateDistance(
-          latitude,
-          longitude,
-          WORKPLACE_LATITUDE,
-          WORKPLACE_LONGITUDE
-        );
+      console.log("Office coords:", WORKPLACE_LATITUDE, WORKPLACE_LONGITUDE);
+      console.log("Device coords:", latitude, longitude);
+      console.log("Distance (m):", distanceM);
+      console.log("Google Maps link (device): https://www.google.com/maps?q=" + latitude + "," + longitude);
 
-        if (distance * 1000 < 50) {
-          document.getElementById(state+'-latitude').value=latitude
-          document.getElementById(state+'-longitude').value=longitude
-          callback();
-          console.log('callbackActive')
-        } else {
-          console.log(latitude,
-            longitude)
-        }
-      },
-      function (error) {
-        switch (error.code) {
-          case error.PERMISSION_DENIED:
-            alert("User denied the request for Geolocation.");
-            break;
-          case error.POSITION_UNAVAILABLE:
-            alert("Location information is unavailable.");
-            break;
-          case error.TIMEOUT:
-            alert("The request to get user location timed out.");
-            break;
-          case error.UNKNOWN_ERROR:
-            alert("An unknown error occurred.");
-            break;
-        }
+      if (distanceM <= (window.APP_CONFIG?.GEOFENCE_RADIUS_M ?? 10)) {
+        document.getElementById(state+'-latitude').value = latitude;
+        document.getElementById(state+'-longitude').value = longitude;
+        callback();
+      } else {
+        alert('You are outside the allowed area. Distance: ' + Math.round(distanceM) + 'm');
       }
-    );
-  } else {
-    alert("Geolocation is not supported by this browser.");
-  }
+    },
+    function (error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED: alert('Location permission denied.'); break;
+        case error.POSITION_UNAVAILABLE: alert('Location unavailable.'); break;
+        case error.TIMEOUT: alert('Location request timed out.'); break;
+        default: alert('Unknown geolocation error.');
+      }
+    },
+    { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+  );
 }

@@ -2,10 +2,8 @@ body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
@@ -14,12 +12,12 @@ body {
 
 .login-container {
     background-color: #ffffff;
+    margin: 3rem auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: 400px;
-    width: 100%;
+    max-width: 360px;
 }
 
 h3 {
@@ -31,6 +29,11 @@ h3 {
     margin-top: 20px;
 }
 
+.form-box-wrapper button {
+    width: 90%;
+    padding: 15px;
+}
+
 label {
     display: block;
     margin-bottom: 8px;
@@ -39,10 +42,10 @@ label {
 
 input[type="text"],
 input[type="password"] {
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #212020;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -79,7 +82,8 @@ button {
 /* Registration page */
 
 .form-wrap {
-    width: 100%;
+    width: 40%;
+    margin: 3rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,11 +160,11 @@ button {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 8px;
-    max-width: 600px;
-    margin: auto;
+    max-width: 500px;
+    margin: 3rem auto;
 }
 
-h2 {
+/* h2 {
     color: #333;
     margin-bottom: 20px;
     text-align: center;
@@ -183,18 +187,13 @@ form {
     margin-top: 20px;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+.log-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.log-btns button {
+    padding: 20px;
 }
 
 button:hover {
@@ -203,4 +202,108 @@ button:hover {
 
 button:active {
     background-color: #3e8e41;
+} */
+
+.user-info {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f9fafc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.user-info h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 2px solid #ff0000;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.user-table th {
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.user-table tr {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.user-table tr:hover {
+  background: #f1f7ff;
+}
+
+.user-table td {
+  color: #444;
+}
+
+/* Clock Buttons */
+.hidden {
+  display: none !important;
+}
+
+.log-btns {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 0;
+  gap: 15px;
+}
+
+.action-btn {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #ff0000, #ff0000);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.action-btn:hover {
+  background: linear-gradient(135deg, #f33545, #ef2f2f);
+  transform: translateY(-2px);
+}
+
+.action-btn:disabled {
+  background: #b0bec5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Logout Button */
+.logout-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #7b1900;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #b03e23;
 }
