@@ -112,7 +112,7 @@ $conn->close();
       </button>
 
       <button 
-        class="action-btn" 
+        class="action-btn"
         onclick="getLocation(updateWorkerAttendance('clockout-btn'), APP_CONFIG.OFFICE_LATITUDE, APP_CONFIG.OFFICE_LONGITUDE, 'clockout')" 
         <?php echo $last_out ? 'disabled' : ''; ?>>
         Clock Out

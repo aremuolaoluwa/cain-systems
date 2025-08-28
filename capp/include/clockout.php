@@ -78,5 +78,5 @@ $stmt->execute();
 $stmt->close();
 $conn->close();
 
-echo "<script>alert('Clock-out recorded successfully.'); window.location='../dashboard.php';</script>";
+echo "<script>alert('Clock-out successful!.'); window.location='../dashboard.php';</script>";
 exit();

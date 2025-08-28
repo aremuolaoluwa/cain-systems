@@ -273,7 +273,7 @@ button:active {
   border: none;
   cursor: pointer;
   color: #fff;
-  background: linear-gradient(135deg, #ff0000, #ff0000);
+  background: linear-gradient(135deg, #f10808, #d70303);
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }

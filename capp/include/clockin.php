@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 
     if ($stmt->execute()) {
-        echo "<script>alert('Clock-in recorded.'); window.location.href='../dashboard.php';</script>";
+        echo "<script>alert('You've successfully clocked-in.'); window.location.href='../dashboard.php';</script>";
     } else {
         error_log("Insert error: " . $stmt->error);
         echo "<script>alert('Failed to record clock-in.'); window.location.href='../dashboard.php';</script>";
