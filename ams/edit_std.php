@@ -12,8 +12,8 @@ include './include/edit.php';
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <?php include "side-drawer.php"; ?>
     <?php include "header.php"; ?>
+    <?php include "side-drawer.php"; ?>
     <div class="search-container">
         <h1 class="search-title">Update Student Information</h1>
         <form method="POST" action="">

@@ -13,8 +13,8 @@ $result = $conn->query("SELECT * FROM prospective_students");
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-    <?php include "side-drawer.php"; ?>
     <?php include "header.php"; ?>
+    <?php include "side-drawer.php"; ?>
     <div class="table-wrap">
         <h2 class="tbl-title">Prospective Students' Information</h2>
         <table class="enroll-tbl">

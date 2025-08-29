@@ -1,4 +1,3 @@
-<!-- side-drawer.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +77,7 @@
     <script>
         function openDrawer() {
             document.getElementById("sideDrawer").classList.add("open");
-            document.getElementById("mainContent").style.marginLeft = "250px"; /* Adjust to match drawer width */
+            document.getElementById("mainContent").style.marginLeft = "250px";
         }
 
         function closeDrawer() {

@@ -7,8 +7,8 @@
     <title>Enrolled Students</title>
 </head>
 <body>
-    <?php include "side-drawer.php"; ?>
     <?php include "header.php"; ?>
+    <?php include "side-drawer.php"; ?>
     <div class="table-wrap">
         <h2 class="tbl-title">Enrolled Students</h2>
         <table class="enroll-tbl">

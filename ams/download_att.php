@@ -7,8 +7,8 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-    <?php include "side-drawer.php"; ?>
     <?php include "header.php"; ?>
+    <?php include "side-drawer.php"; ?>
     <div class="download-form-wrap">
         <div class="form-items">
             <form action="./include/download.php" method="GET">

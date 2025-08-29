@@ -5,7 +5,7 @@ const OFFICE_LONGITUDE = 3.2607992927028606;
 
 
 // Allowed radius in metres
-const GEOFENCE_RADIUS_M = 20000;
+const GEOFENCE_RADIUS_M = 50;
 
 
 // Admin setup token
