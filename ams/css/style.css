@@ -400,6 +400,21 @@ th, td {
     box-sizing: border-box;
 }
 
+.date-main-container {
+    width: fit-content;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+#attendance_date {
+    background-color: #a50000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
 
 /* Attendance Ends Here */
 
@@ -438,12 +453,12 @@ th, td {
     font-size: 16px;
 }
 
-.att-btn {
+/* .att-btn {
     width: 35%;
     margin: 0 auto;
     margin-bottom: 10rem;
     padding: 20px;
-}
+} */
 
 .button-container input[type="submit"]:hover {
     background-color: #e80101;

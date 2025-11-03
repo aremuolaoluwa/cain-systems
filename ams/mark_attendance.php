@@ -116,8 +116,21 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="button-container att-btn">
-                    <input type="submit" value="Take Attendance">
+                <div class="date-main-container">
+                    <div class="date-container">
+                        <label for="attendance_date">Select Date:</label>
+                        <input type="date" id="attendance_date" name="attendance_date" required>
+                    </div>
+
+                    <script>
+                        // Restrict date input: cannot select future dates
+                        const today = new Date().toISOString().split('T')[0];
+                        document.getElementById('attendance_date').setAttribute('max', today);
+                    </script>
+
+                    <div class="button-container att-btn">
+                        <input type="submit" value="Take Attendance">
+                    </div>
                 </div>
             </div>
         </form>
