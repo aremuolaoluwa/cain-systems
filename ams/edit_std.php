@@ -2,6 +2,7 @@
 
 include './include/search.php';
 include './include/edit.php';
+
 ?>
 
 <!DOCTYPE html>

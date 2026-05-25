@@ -1,6 +1,5 @@
 <?php
 include './include/db.php';
-
 $result = $conn->query("SELECT * FROM prospective_students");
 ?>
 

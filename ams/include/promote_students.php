@@ -32,8 +32,13 @@ if ($row['count'] > 0) {
     die("Promotion has already been run for $newAcademicYear. Cannot run twice.");
 }
 
-// save current class to `previous_class` for rollback
-$conn->query("UPDATE student_profile SET previous_class = class");
+// save current class to `previous_class` for rollback while ensuring that
+// repeaters do NOT have their previous class changed.
+$conn->query("
+    UPDATE student_profile 
+    SET previous_class = class
+    WHERE promotion_status = 'ELIGIBLE'
+");
 
 $promotions = [
     'JSS1' => 'JSS2',
@@ -53,19 +58,31 @@ if ($prevRow['c'] > 0) {
 
 foreach ($promotions as $oldClass => $newClass) {
     $conn->query("UPDATE student_profile 
-                  SET class='$newClass' 
-                  WHERE $referenceColumn='$oldClass'");
+              SET class='$newClass' 
+              WHERE $referenceColumn='$oldClass'
+              AND promotion_status='ELIGIBLE'");
 }
 
 // graduate SS3 students into Alumni
 $conn->query("UPDATE student_profile 
               SET class=CONCAT('Alumni, ', '$newAcademicYear') 
-              WHERE $referenceColumn='SS3'");
+              WHERE $referenceColumn='SS3'
+              AND promotion_status='ELIGIBLE'");
 
-$conn->query("UPDATE student_profile SET academic_year='$newAcademicYear'");
+$conn->query("
+    UPDATE student_profile 
+    SET academic_year='$newAcademicYear'
+    WHERE promotion_status='ELIGIBLE'
+");
+
+//prepares the system for next year's promotion cycle
+$conn->query("
+    UPDATE student_profile
+    SET promotion_status='PENDING'
+");
 
 echo "Promotion completed successfully for $newAcademicYear.<br>";
-echo "Automatic next academic year calculated as: $autoAcademicYear (for future runs).<br>";
+echo "Automatic next academic year calculated as: $autoAcademicYear.<br>";
 echo "<a href='rollback.php'>Rollback Promotions</a>";
 
 // log promotion history
